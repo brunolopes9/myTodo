@@ -1,6 +1,8 @@
 import { useState } from "react"
+import { useDispatch } from "react-redux"
+import { createTodo } from "../todosSlice"
 
-export default function NewTodoForm({ onCreateClicked }) {
+export default function NewTodoForm() {
   function handleCreate() {
     if (!inputText.trim()) {
       alert("Please enter a valid todo item.")
@@ -11,6 +13,7 @@ export default function NewTodoForm({ onCreateClicked }) {
   }
 
   const [inputText, setInputText] = useState("")
+  const dispatch = useDispatch()
   return (
     <div className=" gap-2 mx-auto">
       <input
@@ -23,7 +26,7 @@ export default function NewTodoForm({ onCreateClicked }) {
       <button
         className="bg-blue-500 text-white px-3 py-1.5 ml-3 rounded hover:bg-blue-700 hover:border-gray-700"
         onClick={() => {
-          handleCreate()
+          dispatch(createTodo(inputText))
         }}
       >
         Create Todo

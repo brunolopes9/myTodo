@@ -1,19 +1,16 @@
+import { useSelector } from "react-redux"
 import TodoListItem from "./TodoListItem"
 import NewTodoForm from "./NewTodoForm"
 
-export default function TodoList({
-  completedTodos,
-  incompleteTodos,
-  onCompletedClicked,
-  onDeleteClicked,
-  onCreateClicked,
-}) {
+export default function TodoList() {
+  const todos = useSelector((state) => state.todos.value)
+
   return (
     <div className="w-full max-w-6xl mx-auto bg-gray-50 p-6 rounded-xl shadow-lg border border-gray-300">
       <h1 className="text-2xl font-bold text-gray-800 mb-6">My Todos</h1>
 
       <div className="mb-8">
-        <NewTodoForm onCreateClicked={onCreateClicked} />
+        <NewTodoForm />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -23,12 +20,11 @@ export default function TodoList({
             Completed
           </h3>
           <div className="space-y-3 border-t border-green-300 pt-3">
-            {completedTodos.length > 0 ? (
-              completedTodos.map((todo, index) => (
+            {todos.length > 0 ? (
+              todos.map((todo, index) => (
                 <TodoListItem
                   todo={todo}
                   key={index}
-                  onDeleteClicked={onDeleteClicked}
                   className="bg-green-100 rounded p-3 border border-green-200 flex justify-between items-center"
                 />
               ))
@@ -44,12 +40,11 @@ export default function TodoList({
             Incomplete
           </h3>
           <div className="space-y-3 border-t border-red-300 pt-3">
-            {incompleteTodos.length > 0 ? (
-              incompleteTodos.map((todo, index) => (
+            {todos.length > 0 ? (
+              todos.map((todo, index) => (
                 <TodoListItem
                   todo={todo}
                   key={index}
-                  onCompletedClicked={onCompletedClicked}
                   className="bg-red-100 rounded p-3 border border-red-200 flex justify-between items-center"
                 />
               ))
