@@ -5,12 +5,14 @@ export default function TodoListItem({
   className,
 }) {
   return (
-    <div className={`flex justify-between items-center gap-3 ${className}`}>
+    <div
+      className={`flex flex-col md:flex-row justify-between items-start md:items-center gap-3 ${className}`}
+    >
       {/* Texto da tarefa */}
       <h3 className="flex-1 break-words">{todo.text}</h3>
 
       {/* Botão à direita */}
-      <div className="flex gap-2 shrink-0">
+      <div className="flex gap-2 mt-2 md:mt-0">
         {todo.isCompleted ? (
           <button
             onClick={() => onDeleteClicked(todo.text)}
