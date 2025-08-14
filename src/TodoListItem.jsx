@@ -7,7 +7,7 @@ export default function TodoListItem({
   return (
     <div className={`flex justify-between items-center gap-3 ${className}`}>
       {/* Texto da tarefa */}
-      <h3 className="flex-1 break-words max-w-[70%]">{todo.text}</h3>
+      <h3 className="flex-1 break-words">{todo.text}</h3>
 
       {/* Botão à direita */}
       <div className="flex gap-2 shrink-0">
