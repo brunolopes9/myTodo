@@ -7,15 +7,6 @@ export const todosSlice = createSlice({
     value: [],
   },
   reducers: {
-    createTodo: (state, action) => {
-      state.value = [
-        ...state.value,
-        {
-          text: action.payload,
-          isCompleted: false,
-        },
-      ]
-    },
     markTodoAsCompleted: (state, action) => {
       const text = action.payload
       const todo = state.value.find((t) => t.text === text)
@@ -37,5 +28,5 @@ export const todosSlice = createSlice({
   },
 })
 
-export const { createTodo, markTodoAsCompleted, deleteTodo, todosUpdated } =
+export const { markTodoAsCompleted, deleteTodo, todosUpdated } =
   todosSlice.actions
