@@ -26,10 +26,10 @@ export default function TodoList() {
               </h3>
               <div className="space-y-3 border-t border-green-300 pt-3">
                 {todos.length > 0 ? (
-                  todos.map((todo, index) => (
+                  todos.map((todo) => (
                     <TodoListItem
                       todo={todo}
-                      key={index}
+                      key={todo.id}
                       className="bg-green-100 rounded p-3 border border-green-200 flex justify-between items-center"
                     />
                   ))
@@ -48,10 +48,10 @@ export default function TodoList() {
               </h3>
               <div className="space-y-3 border-t border-red-300 pt-3">
                 {todos.length > 0 ? (
-                  todos.map((todo, index) => (
+                  todos.map((todo) => (
                     <TodoListItem
                       todo={todo}
-                      key={index}
+                      key={todo.id}
                       className="bg-red-100 rounded p-3 border border-red-200 flex justify-between items-center"
                     />
                   ))

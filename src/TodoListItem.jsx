@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux"
-import { markTodoAsCompleted, deleteTodo } from "../todosSlice"
+import { markTodoAsCompleted } from "../todosSlice"
+import { deleteTodo } from "./thunks"
 
 export default function TodoListItem({ todo, className }) {
   const dispatch = useDispatch()
@@ -15,7 +16,7 @@ export default function TodoListItem({ todo, className }) {
       <div className="flex gap-2 mt-2 md:mt-0">
         {todo.isCompleted ? (
           <button
-            onClick={() => dispatch(deleteTodo(todo.text))}
+            onClick={() => dispatch(deleteTodo(todo.id))}
             className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 whitespace-nowrap"
           >
             Delete Item
