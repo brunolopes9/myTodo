@@ -1,4 +1,5 @@
 import express from "express"
+import cors from "cors"
 
 const app = express()
 const port = 3000
@@ -10,6 +11,7 @@ let todos = [
     isCompleted: true,
   },
 ]
+app.use(cors())
 
 app.use(express.json())
 
@@ -28,8 +30,8 @@ app.post("/api/todos", (req, res) => {
 })
 
 app.delete("/api/todos/:id", (req, res) => {
-  const todoId = parseInt(req.params.id, 10)
-  todos = todos.filter((todo) => todo.ic !== todoId)
+  const todoId = req.params.id
+  todos = todos.filter((todo) => todo.id !== todoId)
   res.send()
 })
 
@@ -48,5 +50,5 @@ app.put("/api/todos/:id", (req, res) => {
 })
 
 app.listen(port, () => {
-  console.log("Server is running on http://localhost:${port}")
+  console.log(`Server is running on http://localhost:${port}`)
 })

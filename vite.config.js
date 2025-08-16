@@ -7,10 +7,7 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
     proxy: {
-      "/api": {
-        target: "https://kgbmpl3t-3000.uks1.devtunnels.ms",
-        changeOrigin: true,
-      },
+      "/api": "http://localhost:3000",
     },
   },
 })
