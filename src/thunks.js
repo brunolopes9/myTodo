@@ -5,7 +5,9 @@ import { todosUpdated } from "../todosSlice"
 export const loadTodos = () => async (dispatch) => {
   dispatch(loadingStarted())
   try {
-    const response = await axios.get("/api/todos")
+    const response = await axios.get(
+      "https://mytodo-xyjv.onrender.com/api/todos"
+    )
     const todos = response.data
     console.log(todos)
     dispatch(loadingCompleted(todos))
