@@ -2,7 +2,13 @@
 
 This project is not just another Todo App — it was built from scratch with a complete frontend + backend stack, implementing modern concepts from Redux Toolkit, asynchronous Thunks, Axios, memoized Selectors, and REST API in Node/Express.
 
-📸 Screenshots
+## 📸 Screenshots
+
+<img src="/public/1.png"> 
+<img src="./public/2.png"> <img src="./public/3.png"> 
+<img src="./public/4.png"> 
+
+
 
 
 ## 🛠️ Used Tech 
@@ -22,14 +28,23 @@ This project is not just another Todo App — it was built from scratch with a c
 ## 📂 Project Structure
 
 ├── src/
+
 │ ├── NewTodoForm.jsx # Creation form
+
 │ ├── TodoList.jsx # Main list of all
+
 │ ├── TodoListItem.jsx # Individual item
+
 │ ├── selectors.js # Stored selectors (completed/incomplete/loading)
+
 │ ├── thunks.js # Asynchronous thunks (axios)
+
 │ ├── todosSlice.js # Redux slice for all
+
 │ ├── loadingSlice.js # Redux slice for loading state
+
 │ ├── server.js # Express server (REST API for all)
+
 
 ## ⚙️ Features
 
