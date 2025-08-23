@@ -1,5 +1,8 @@
 # 🚀 Fullstack Todo App (React + Redux Toolkit + Express)
 
+👉 Live Demo:
+🔗 https://lnkd.in/deQrbqnC
+
 This project is not just another Todo App — it was built from scratch with a complete frontend + backend stack, implementing modern concepts from Redux Toolkit, asynchronous Thunks, Axios, memoized Selectors, and REST API in Node/Express.
 
 ## 📸 Screenshots
