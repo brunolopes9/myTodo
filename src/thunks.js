@@ -18,7 +18,10 @@ export const loadTodos = () => async (dispatch) => {
 
 export const createTodo = (newTodoText) => async (dispatch, getState) => {
   try {
-    const response = await axios.post("/api/todos", { text: newTodoText })
+    const response = await axios.post(
+      "https://mytodo-xyjv.onrender.com/api/todos",
+      { text: newTodoText }
+    )
     const newTodo = response.data
     const updatedTodos = getState().todos.value.concat(newTodo)
     dispatch(todosUpdated(updatedTodos))
@@ -29,7 +32,7 @@ export const createTodo = (newTodoText) => async (dispatch, getState) => {
 
 export const deleteTodo = (todoId) => async (dispatch, getState) => {
   try {
-    await axios.delete("/api/todos/" + todoId)
+    await axios.delete("https://mytodo-xyjv.onrender.com/api/todos/" + todoId)
     const updatedTodos = getState().todos.value.filter((t) => t.id !== todoId)
     dispatch(todosUpdated(updatedTodos))
   } catch (e) {
@@ -39,9 +42,12 @@ export const deleteTodo = (todoId) => async (dispatch, getState) => {
 
 export const markTodoAsCompleted = (todoId) => async (dispatch, getState) => {
   try {
-    const response = await axios.put("/api/todos/" + todoId, {
-      isCompleted: true,
-    })
+    const response = await axios.put(
+      "https://mytodo-xyjv.onrender.com/api/todos/" + todoId,
+      {
+        isCompleted: true,
+      }
+    )
     const updatedTodo = response.data
     const updatedTodos = getState().todos.value.map((t) =>
       t.id === todoId ? updatedTodo : t
